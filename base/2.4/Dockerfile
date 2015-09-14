@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y python-pip python-pycurl python-cherryp
     apt-get clean
 
 # Install shinken
-RUN pip install shinken==2.4
+RUN pip install shinken==2.4 && \
+    shinken --init
 
 VOLUME /var/lib/shinken
 VOLUME /etc/shinken
