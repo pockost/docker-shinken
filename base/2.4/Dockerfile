@@ -10,5 +10,3 @@ RUN apt-get update && apt-get install -y python-pip python-pycurl python-cherryp
 # Install shinken
 RUN pip install shinken==2.4 && \
     shinken --init
-
-VOLUME /var/lib/shinken
