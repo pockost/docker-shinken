@@ -30,6 +30,9 @@ reactionner:
     - data
 broker:
   build: broker/2.4
+  links:
+    - scheduler
+    - reactionner
   volumes_from:
     - config
     - data
@@ -38,12 +41,12 @@ receiver:
   volumes_from:
     - config
     - data
-
+#
 config:
-  image: pockost/shinken:2.4-base
+  build: base/2.4
   volumes:
     - /etc/shinken
 data:
-  image: pockost/shinken:2.4-base
+  build: base/2.4
   volumes:
     - /var/lib/shinken
