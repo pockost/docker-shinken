@@ -9,8 +9,7 @@ RUN apt-get update && apt-get install -y python-pymongo && \
 # Install mongodb mobule
 RUN /usr/bin/shinken install mod-mongodb && \
     /usr/bin/shinken install snapshot-mongodb && \
-    /usr/bin/shinken install retention-mongodb && \
-    /usr/bin/shinken install mongo-logs
+    /usr/bin/shinken install retention-mongodb
 
 COPY arbiter-master.cfg /etc/shinken/arbiters/arbiter-master.cfg
 COPY broker-master.cfg /etc/shinken/brokers/broker-master.cfg

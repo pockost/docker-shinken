@@ -1,0 +1,53 @@
+arbiter:
+  build: arbiter/2.4-mongodb
+  links:
+    - poller
+    - scheduler
+    - reactionner
+    - broker
+    - receiver
+    - mongo
+  volumes_from:
+    - config
+    - data
+poller:
+  build: poller/2.4-mongodb
+  links:
+    - scheduler
+  volumes_from:
+    - config
+    - data
+scheduler:
+  build: scheduler/2.4-mongodb
+  volumes_from:
+    - config
+    - data
+reactionner:
+  build: reactionner/2.4-mongodb
+  links:
+    - scheduler
+  volumes_from:
+    - config
+    - data
+broker:
+  build: broker/2.4-mongodb
+  volumes_from:
+    - config
+    - data
+receiver:
+  build: receiver/2.4-mongodb
+  volumes_from:
+    - config
+    - data
+#
+config:
+  build: base/2.4-mongodb
+  volumes:
+    - /etc/shinken
+data:
+  build: base/2.4-mongodb
+  volumes:
+    - /var/lib/shinken
+
+mongo:
+  image: mongo
