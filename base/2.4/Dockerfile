@@ -12,5 +12,3 @@ RUN pip install shinken==2.4 && \
     shinken --init
 
 VOLUME /var/lib/shinken
-VOLUME /etc/shinken
-
