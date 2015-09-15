@@ -4,7 +4,8 @@ MAINTAINER  Romain THERRAT
 # Install mongodb mobule
 RUN /usr/bin/shinken install mod-mongodb && \
     /usr/bin/shinken install snapshot-mongodb && \
-    /usr/bin/shinken install retention-mongodb
+    /usr/bin/shinken install retention-mongodb && \
+    /usr/bin/shinken install mongo-logs
 
 COPY arbiter-master.cfg /etc/shinken/arbiters/arbiter-master.cfg
 COPY broker-master.cfg /etc/shinken/brokers/broker-master.cfg
