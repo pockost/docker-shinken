@@ -1,0 +1,65 @@
+arbiter:
+  build: base/2.4-mongodb-webui2
+  links:
+    - poller
+    - scheduler
+    - reactionner
+    - broker
+    - receiver
+    - mongo
+  command: "/usr/bin/shinken-arbiter -c /etc/shinken/shinken.cfg"
+  expose:
+    - "7770"
+  volumes_from:
+    - config
+    - data
+poller:
+  build: poller/2.4-mongodb
+  links:
+    - scheduler
+  volumes_from:
+    - config
+    - data
+scheduler:
+  build: scheduler/2.4-mongodb
+  volumes_from:
+    - config
+    - data
+reactionner:
+  build: reactionner/2.4-mongodb
+  links:
+    - scheduler
+  volumes_from:
+    - config
+    - data
+broker:
+  build: base/2.4-mongodb-webui2
+  links:
+    - mongo
+    - scheduler
+    - reactionner
+  expose:
+    - "7772"
+  ports:
+    - "7767"
+  command: "/usr/bin/shinken-broker -c /etc/shinken/daemons/brokerd.ini"
+  volumes_from:
+    - config
+    - data
+receiver:
+  build: receiver/2.4-mongodb
+  volumes_from:
+    - config
+    - data
+#
+config:
+  build: base/2.4-mongodb-webui2
+  volumes:
+    - /etc/shinken
+data:
+  build: base/2.4-mongodb-webui2
+  volumes:
+    - /var/lib/shinken
+
+mongo:
+  image: mongo
