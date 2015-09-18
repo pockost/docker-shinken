@@ -5,7 +5,8 @@ MAINTAINER  Romain THERRAT
 RUN apt-get update && apt-get install -y python-pymongo && \
     pip install bottle && \
     apt-get -y autoremove && \
-    apt-get clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install mongodb mobule
 RUN /usr/bin/shinken install webui2 && \

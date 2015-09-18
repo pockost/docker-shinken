@@ -4,7 +4,8 @@ MAINTAINER  Romain THERRAT
 # Install deps and create shinken user
 RUN apt-get update && apt-get install -y python-pymongo && \
     apt-get -y autoremove && \
-    apt-get clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install mongodb mobule
 RUN /usr/bin/shinken install mod-mongodb && \
