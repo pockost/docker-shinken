@@ -10,7 +10,11 @@ RUN apt-get update && apt-get install -y python-pymongo && \
 
 # Install mongodb mobule
 RUN /usr/bin/shinken install webui2 && \
-    /usr/bin/shinken install ui-graphite
+    /usr/bin/shinken install ui-graphite && \
+    /usr/bin/shinken install ssh && \
+    /usr/bin/shinken install linux-ssh && \
+    /usr/bin/shinken install http
+
 
 COPY broker-master.cfg /etc/shinken/brokers/broker-master.cfg
 COPY webui2.cfg /etc/shinken/modules/webui2.cfg
