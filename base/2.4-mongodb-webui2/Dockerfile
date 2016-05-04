@@ -2,8 +2,9 @@ FROM pockost/shinken:latest-mongodb-base
 MAINTAINER  Romain THERRAT
 
 # Install deps and create shinken user
-RUN apt-get update && apt-get install -y python-pymongo && \
+RUN apt-get update && apt-get install -y python-pymongo python-dev libffi-dev libssl-dev && \
     pip install bottle && \
+    pip install --upgrade cffi && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
