@@ -16,7 +16,7 @@ RUN /usr/bin/shinken install webui2 && \
     /usr/bin/shinken install ssh && \
     /usr/bin/shinken install linux-ssh && \
     /usr/bin/shinken install http && \
-    /usr/bin/pip install paramiko
+    pip install paramiko
 
 
 COPY broker-master.cfg /etc/shinken/brokers/broker-master.cfg
