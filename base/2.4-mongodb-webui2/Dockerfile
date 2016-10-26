@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y python-pymongo python-dev libffi-dev li
     pip install bottle && \
     pip install --upgrade cffi && \
     pip install --upgrade paramiko && \
+    pip install --upgrade requests && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
