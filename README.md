@@ -88,7 +88,7 @@ services:
       - back
   broker:
     image: pockost/shinken:2.4-webui2-base
-    restart: always
+    restart: unless-stopped
     command: "/usr/bin/shinken-broker -c /etc/shinken/daemons/brokerd.ini"
     expose:
       - "7772"
