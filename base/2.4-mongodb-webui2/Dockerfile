@@ -4,6 +4,7 @@ MAINTAINER  Romain THERRAT
 # Install deps and create shinken user
 RUN apt-get update && apt-get install -y python-pymongo python-dev libffi-dev libssl-dev build-essential && \
     pip install bottle && \
+    pip install passlib && \
     pip install --upgrade cffi && \
     pip install --upgrade paramiko && \
     pip install --upgrade requests && \
