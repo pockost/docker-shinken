@@ -19,3 +19,4 @@ COPY reactionner-master.cfg /etc/shinken/reactionners/reactionner-master.cfg
 COPY receiver-master.cfg /etc/shinken/receivers/receiver-master.cfg
 COPY scheduler-master.cfg /etc/shinken/schedulers/scheduler-master.cfg
 COPY mongodb.cfg /etc/shinken/modules/mongodb.cfg
+COPY retention-mongodb.cfg /etc/shinken/modules/retention-mongodb.cfg
