@@ -3,4 +3,4 @@ MAINTAINER Romain THERRAT
 
 EXPOSE 7769
 
-ENTRYPOINT ["/usr/bin/shinken-reactionner", "-c", "/etc/shinken/daemons/reactionnerd.ini"]
+CMD ["/usr/bin/shinken-reactionner", "-c", "/etc/shinken/daemons/reactionnerd.ini"]

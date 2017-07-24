@@ -3,4 +3,4 @@ MAINTAINER Romain THERRAT
 
 EXPOSE 7771
 
-ENTRYPOINT ["/usr/bin/shinken-poller", "-c", "/etc/shinken/daemons/pollerd.ini"]
+CMD ["/usr/bin/shinken-poller", "-c", "/etc/shinken/daemons/pollerd.ini"]

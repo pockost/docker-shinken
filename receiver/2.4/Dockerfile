@@ -3,4 +3,4 @@ MAINTAINER  Romain THERRAT
 
 EXPOSE 7773
 
-ENTRYPOINT ["/usr/bin/shinken-receiver", "-c", "/etc/shinken/daemons/receiverd.ini"]
+CMD ["/usr/bin/shinken-receiver", "-c", "/etc/shinken/daemons/receiverd.ini"]

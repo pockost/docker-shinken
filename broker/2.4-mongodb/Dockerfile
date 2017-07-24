@@ -3,4 +3,4 @@ MAINTAINER Romain THERRAT
 
 EXPOSE 7772
 
-ENTRYPOINT ["/usr/bin/shinken-broker", "-c", "/etc/shinken/daemons/brokerd.ini"]
+CMD ["/usr/bin/shinken-broker", "-c", "/etc/shinken/daemons/brokerd.ini"]

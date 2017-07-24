@@ -20,3 +20,8 @@ ADD pollerd.ini /etc/shinken/daemons/pollerd.ini
 ADD schedulerd.ini /etc/shinken/daemons/schedulerd.ini
 ADD reactionnerd.ini /etc/shinken/daemons/reactionnerd.ini
 ADD receiverd.ini /etc/shinken/daemons/receiverd.ini
+
+COPY launch.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/launch.sh
+
+ENTRYPOINT ["/usr/local/bin/launch.sh"]
