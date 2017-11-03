@@ -5,7 +5,7 @@ Docker image for Shinken monitoring system
 
 Initialization
 ```
-touch $HOME/.shinken.ici
+touch $HOME/.shinken.ini
 docker run --rm -it -v $HOME/.shinken.ini:/root/.shinken.ini pockost/shinken shinken --init
 ```
 
